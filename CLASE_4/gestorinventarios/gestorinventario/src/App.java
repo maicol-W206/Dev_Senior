@@ -15,6 +15,7 @@ public class App {
                     Operaciones.registrar(sc);
                     break;
                 case 2:
+                  // usar listar en vez de ver
                     Operaciones.listar();
                     break;
                 case 3:
