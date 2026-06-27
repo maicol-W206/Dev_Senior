@@ -2,7 +2,8 @@ import java.util.Scanner;
 
 public class Cajero {
     public static void main(String[] args) {
-             Scanner tecaldo = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
+        Pedido pedido = new Pedido();
         int opcion;
 
         do {
@@ -10,17 +11,14 @@ public class Cajero {
             System.out.println("1. Nuevo pedido");
             System.out.println("2. Cerrar caja");
             System.out.print("Elige una opcion: ");
-            opcion = tecaldo.nextInt();
+            opcion = sc.nextInt();
 
             switch (opcion) {
                 case 1:
                     System.out.print("Subtotal: ");
-                    double subtotal = tecaldo.nextDouble();
-                    if (subtotal > 100000) {
-                        System.out.println("Pedido con descuento");
-                    } else {
-                        System.out.println("Pedido sin descuento");
-                    }
+                    double subtotal = sc.nextDouble();
+                    double total = pedido.calcularTotal(subtotal, 0.10);
+                    System.out.println("Total con propina: " + total);
                     break;
                 case 2:
                     System.out.println("Caja cerrada");
@@ -29,7 +27,5 @@ public class Cajero {
                     System.out.println("Opcion invalida");
             }
         } while (opcion != 2);
-        
     }
-
 }
