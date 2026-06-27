@@ -57,6 +57,6 @@ public class Operaciones {
         for (int i = 0; i < total; i++) {
             suma = suma + (cantidades[i] * precios[i]);
         }
-        System.out.println("Valor total del inventarioo: " + suma);
+        System.out.println("Valor total del inventario: " + suma);
     }
 }
